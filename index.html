@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouni Restaurant</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:450px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#ff5722;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e64a19;
+}
+
+#menuPage{
+    display:none;
+}
+
+.card{
+    background:#f1f1f1;
+    padding:15px;
+    margin-top:10px;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="formPage">
+        <h1>Mouni Restaurant</h1>
+
+        <input type="text" id="name" placeholder="Enter Your Name">
+
+        <input type="email" id="email" placeholder="Enter Your Email">
+
+        <button onclick="showMenu()">Submit</button>
+    </div>
+
+    <div id="menuPage">
+
+        <h1>🍴 Mouni Restaurant Menu</h1>
+
+        <div class="card">
+            <h3>Chicken Biryani</h3>
+            <p>₹250</p>
+        </div>
+
+        <div class="card">
+            <h3>Mutton Biryani</h3>
+            <p>₹350</p>
+        </div>
+
+        <div class="card">
+            <h3>Pizza</h3>
+            <p>₹199</p>
+        </div>
+
+        <div class="card">
+            <h3>Burger</h3>
+            <p>₹149</p>
+        </div>
+
+        <div class="card">
+            <h3>Ice Cream</h3>
+            <p>₹99</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function showMenu(){
+
+    let name=document.getElementById("name").value;
+    let email=document.getElementById("email").value;
+
+    if(name==="" || email===""){
+        alert("Please enter Name and Email");
+        return;
+    }
+
+    document.getElementById("formPage").style.display="none";
+    document.getElementById("menuPage").style.display="block";
+}
+</script>
+
+</body>
+</html>
